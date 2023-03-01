@@ -42,13 +42,13 @@ const onSubmit = async () => {
     userAccount: userAccount.value,
     userPassword: userPassword.value,
   })
-  console.log(res, '用户登录');
+  console.log(res, 'User Login');
   if ( res.code === 0 && res.data ) {
-    showToast('登陆成功');
+    showToast('Login Successfully');
     const redirectUrl = route.query?.redirect as string ?? '/';
     window.location.href = redirectUrl;
   } else {
-    showToast('登陆失败');
+    showToast('Login Failure');
   }
 };
 

@@ -5,41 +5,41 @@
         <van-field
             v-model="addTeamData.name"
             name="name"
-            label="队伍名"
-            placeholder="请输入队伍名"
-            :rules="[{ required: true, message: '请输入队伍名' }]"
+            label="Team Name"
+            placeholder="Please enter team name"
+            :rules="[{ required: true, message: 'Please enter team name' }]"
         />
         <van-field
             v-model="addTeamData.description"
             rows="4"
             autosize
-            label="队伍描述"
+            label="Team Description"
             type="textarea"
-            placeholder="请输入队伍描述"
+            placeholder="Please enter a team description"
         />
         <van-field
             v-model="addTeamData.expireTime"
             is-link
             readonly
             name="datePicker"
-            label="过期时间"
-            :placeholder="addTeamData.expireTime ?? '点击选择过期时间'"
+            label="Expiration time"
+            :placeholder="addTeamData.expireTime ?? 'Click to select the expiration date'"
             @click="showPicker = true"
         />
         <van-popup v-model:show="showPicker" position="bottom">
           <van-date-picker
               @confirm="onConfirm"
               type="datetime"
-              title="请选择过期时间"
+              title="Please select the expiration date"
               :min-date="minDate"
           />
         </van-popup>
-        <van-field name="radio" label="队伍状态">
+        <van-field name="radio" label="Team Status">
           <template #input>
             <van-radio-group v-model="addTeamData.status" direction="horizontal">
-              <van-radio name="0">公开</van-radio>
-              <van-radio name="1">私有</van-radio>
-              <van-radio name="2">加密</van-radio>
+              <van-radio name="0">Public</van-radio>
+              <van-radio name="1">Private</van-radio>
+              <van-radio name="2">Encrypted</van-radio>
             </van-radio-group>
           </template>
         </van-field>
@@ -48,14 +48,14 @@
             v-model="addTeamData.password"
             type="password"
             name="password"
-            label="密码"
-            placeholder="请输入队伍密码"
-            :rules="[{ required: true, message: '请填写密码' }]"
+            label="Password"
+            placeholder="Please enter the team password"
+            :rules="[{ required: true, message: 'Please fill in the password' }]"
         />
       </van-cell-group>
       <div style="margin: 16px;">
         <van-button round block type="primary" native-type="submit">
-          提交
+          Submit
         </van-button>
       </div>
     </van-form>
@@ -85,7 +85,7 @@ const addTeamData = ref({})
 // 获取之前的队伍信息
 onMounted(async () => {
   if (id <= 0) {
-    Toast.fail('加载队伍失败');
+    Toast.fail('Failed to load queue');
     return;
   }
   const res = await myAxios.get("/team/get", {
@@ -96,7 +96,7 @@ onMounted(async () => {
   if (res?.code === 0) {
     addTeamData.value = res.data;
   } else {
-    Toast.fail('加载队伍失败，请刷新重试');
+    Toast.fail('Failed to load the team, please refresh and try again');
   }}
 )
 
@@ -109,13 +109,13 @@ const onSubmit = async () => {
   // todo 前端参数校验
   const res = await myAxios.post("/team/update", postData);
   if (res?.code === 0 && res.data){
-    showToast('更新成功');
+    showToast('Update successfully');
     router.push({
       path: '/team',
       replace: true,
     });
   } else {
-    showToast('更新失败');
+    showToast('Update Failure');
   }
 }
 

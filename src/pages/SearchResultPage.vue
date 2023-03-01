@@ -1,6 +1,6 @@
 <template>
-  <user-card-list :user-list="userList" />
-  <van-empty v-if="!userList || userList.length < 1" description="搜索结果为空" />
+  <user-card-list :user-list="userList" :loading="loading"/>
+  <van-empty v-if="!userList || userList.length < 1" description="Search result is empty" />
 </template>
 
 <script setup>
@@ -15,8 +15,9 @@ import UserCardList from "../components/UserCardList.vue";
 //钩子
 const { tags } = route.query;
 const userList = ref([]);
-
+const loading = ref(true);
 onMounted( async ()=> {
+  loading.value = true;
   const userListData = await myAxios.get('/user/search/tags', {
     params: {
       tagNameList: tags
@@ -32,12 +33,12 @@ onMounted( async ()=> {
   })
   .then(function (response) {
     console.log('/user/search/tags succeed', response);
-    showToast('请求成功');
+    showToast('Request successfully');
     return response?.data;
   })
   .catch(function (error) {
     console.log('/user/search/tags error', error);
-    showToast('请求失败');
+    showToast('Request Failure');
   })
   if (userListData) {
     userListData.forEach(user => {
@@ -47,29 +48,12 @@ onMounted( async ()=> {
     })
     userList.value = userListData;
   }
+  loading.value = false;
 })
-
-
-
-const mockUser = {
-  id: 1,
-  username: '鱼皮',
-  userAccount: 'yupi',
-  profile: '哈哈哈哈',
-  avatarUrl: 'https://img2.baidu.com/it/u=1790834130,1952230725&fm=253&fmt=auto&app=138&f=JPEG?w=500&h=500',
-  gender: 0,
-  phone: '12345',
-  email: '1253728@qq.com',
-  userRole: 0,
-  planetCode: '123',
-  tags: ['java', 'emo'],
-  createTime: new Date().toDateString()
-}
-
-// const userList = ref([mockUser]);
 
 </script>
 
 <style scoped>
 
 </style>
+

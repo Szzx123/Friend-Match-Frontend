@@ -1,15 +1,15 @@
 <template>
   <template v-if="user">
-    <van-cell title="头像" is-link>
+    <van-cell title="Avatar" is-link>
       <img :src="user.avatarUrl" alt="" style="height: 46px">
     </van-cell>
-    <van-cell title="昵称" is-link :value="user.username" @click="toEdit('username', user.username, '昵称')"/>
-    <van-cell title="账号" :value="user.userAccount"/>
-    <van-cell title="性别" is-link :value="user.gender" @click="toEdit('gender', user.gender, '性别')"/>
-    <van-cell title="电话" is-link :value="user.phone" @click="toEdit('phone', user.phone, '电话')"/>
-    <van-cell title="邮箱" is-link :value="user.email" @click="toEdit('email', user.email, '邮箱')"/>
-    <van-cell title="星球编号" :value="user.planetCode"/>
-    <van-cell title="注册时间" :value="user.createTime"/>
+    <van-cell title="Nickname" is-link :value="user.username" @click="toEdit('username', user.username, '昵称')"/>
+    <van-cell title="Account" :value="user.userAccount"/>
+    <van-cell title="Gender" is-link :value="user.gender" @click="toEdit('gender', user.gender, '性别')"/>
+    <van-cell title="Tel." is-link :value="user.phone" @click="toEdit('phone', user.phone, '电话')"/>
+    <van-cell title="Email" is-link :value="user.email" @click="toEdit('email', user.email, '邮箱')"/>
+    <van-cell title="No." :value="user.planetCode"/>
+    <van-cell title="Registration Time" :value="user.createTime"/>
   </template>
 </template>
 

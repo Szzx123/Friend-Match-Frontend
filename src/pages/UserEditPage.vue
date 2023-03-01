@@ -5,12 +5,12 @@
           v-model="editUser.currentValue"
           :name="editUser.editKey"
           :label="editUser.editName"
-          :placeholder="`请输入${editUser.editName}`"
+          :placeholder="`Please enter${editUser.editName}`"
       />
     </van-cell-group>
     <div style="margin: 16px;">
       <van-button round block type="primary" native-type="submit">
-        提交
+        Submit
       </van-button>
     </div>
   </van-form>
@@ -36,7 +36,7 @@ const editUser = ref({
 const onSubmit = async () => {
   const currentUser = await getCurrentUser();
   if (!currentUser){
-    showToast('用户未登陆');
+    showToast('User not logged in');
     return;
   }
   const res = await myAxios.post('/user/update', {
@@ -44,10 +44,10 @@ const onSubmit = async () => {
     [editUser.value.editKey as string]: editUser.value.currentValue,
   })
   if (res.code === 0 && res.data > 0) {
-    showToast('修改成功');
+    showToast('Modify Successfully');
     router.back();
   } else {
-    showToast('修改错误');
+    showToast('Modify Error');
   }
 };
 

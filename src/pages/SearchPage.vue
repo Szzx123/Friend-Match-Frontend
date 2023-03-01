@@ -3,13 +3,13 @@
     <van-search
         v-model="searchText"
         show-action
-        placeholder="请输入搜索标签"
+        placeholder="Please enter a search tag"
         @search="onSearch"
         @cancel="onCancel"
     />
   </form>
-  <van-divider content-position="left">已选标签</van-divider>
-  <div v-if="activeIds.length === 0" >请选择标签</div>
+  <van-divider content-position="left">Selected Tags</van-divider>
+  <div v-if="activeIds.length === 0" >Please select a tag</div>
   <van-row gutter="16" style="padding: 0 16px">
     <van-col v-for="tag in activeIds">
       <van-tag closeable size="small" type="primary" @close="doClose(tag)">
@@ -17,7 +17,7 @@
       </van-tag>
     </van-col>
   </van-row>
-  <van-divider content-position="left">选择标签</van-divider>
+  <van-divider content-position="left">Select Tag</van-divider>
   <van-tree-select
       v-model:active-id="activeIds"
       v-model:main-active-index="activeIndex"
@@ -25,7 +25,7 @@
   />
   <div style="padding: 12px">
     <van-button block type="primary" @click="toSearchResult">
-      搜索
+      Search
     </van-button>
   </div>
 

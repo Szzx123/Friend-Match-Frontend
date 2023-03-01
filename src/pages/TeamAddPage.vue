@@ -5,46 +5,46 @@
         <van-field
             v-model="addTeamData.name"
             name="name"
-            label="队伍名"
-            placeholder="请输入队伍名"
-            :rules="[{ required: true, message: '请输入队伍名' }]"
+            label="Team Name"
+            placeholder="Please enter team name"
+            :rules="[{ required: true, message: 'Please enter team name' }]"
         />
         <van-field
             v-model="addTeamData.description"
             rows="4"
             autosize
-            label="队伍描述"
+            label="Team Description"
             type="textarea"
-            placeholder="请输入队伍描述"
+            placeholder="Please enter a team description"
         />
         <van-field
             v-model="addTeamData.expireTime"
             is-link
             readonly
             name="datePicker"
-            label="过期时间"
-            :placeholder="addTeamData.expireTime ?? '点击选择过期时间'"
+            label="Expiration time"
+            :placeholder="addTeamData.expireTime ?? 'Click to select the expiration date'"
             @click="showPicker = true"
         />
         <van-popup v-model:show="showPicker" position="bottom">
           <van-date-picker
               @confirm="onConfirm"
               type="datetime"
-              title="请选择过期时间"
+              title="Please select the expiration date"
               :min-date="minDate"
           />
         </van-popup>
-        <van-field name="stepper" label="最大人数">
+        <van-field name="stepper" label="Maximum Size">
           <template #input>
             <van-stepper v-model="addTeamData.maxNum" max="10" min="3"/>
           </template>
         </van-field>
-        <van-field name="radio" label="队伍状态">
+        <van-field name="radio" label="Team Status">
           <template #input>
             <van-radio-group v-model="addTeamData.status" direction="horizontal">
-              <van-radio name="0">公开</van-radio>
-              <van-radio name="1">私有</van-radio>
-              <van-radio name="2">加密</van-radio>
+              <van-radio name="0">Public</van-radio>
+              <van-radio name="1">Private</van-radio>
+              <van-radio name="2">Encrypted</van-radio>
             </van-radio-group>
           </template>
         </van-field>
@@ -60,7 +60,7 @@
       </van-cell-group>
       <div style="margin: 16px;">
         <van-button round block type="primary" native-type="submit">
-          提交
+          Submit
         </van-button>
       </div>
     </van-form>
@@ -108,13 +108,13 @@ const onSubmit = async () => {
   // todo 前端参数校验
   const res = await myAxios.post("/team/add", postData);
   if (res?.code === 0 && res.data){
-    showToast('添加成功');
+    showToast('Add Successfully');
     router.push({
       path: '/team',
       replace: true,
     });
   } else {
-    showToast('添加失败');
+    showToast('Add Failure');
   }
 }
 </script>

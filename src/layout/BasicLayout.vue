@@ -13,9 +13,9 @@
     <router-view/>
   </div>
   <van-tabbar route @change="onChange">
-    <van-tabbar-item to="/" icon="home-o" name="index">主页</van-tabbar-item>
-    <van-tabbar-item to="/team" icon="search" name="team">队伍</van-tabbar-item>
-    <van-tabbar-item to="/user" icon="friends-o" name="user">个人</van-tabbar-item>
+    <van-tabbar-item to="/" icon="home-o" name="index">Main Page</van-tabbar-item>
+    <van-tabbar-item to="/team" icon="search" name="team">Team</van-tabbar-item>
+    <van-tabbar-item to="/user" icon="friends-o" name="user">Personal</van-tabbar-item>
   </van-tabbar>
 </template>
 
@@ -25,7 +25,7 @@ import {ref} from "vue";
 import routes from "../config/route";
 
 const router = useRouter();
-const DEFAULT_TITLE = '伙伴匹配';
+const DEFAULT_TITLE = 'Partner Matching';
 const title = ref(DEFAULT_TITLE);
 
 /**

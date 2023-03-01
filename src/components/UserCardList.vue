@@ -11,7 +11,7 @@
         </van-tag>
       </template>
       <template #footer>
-        <van-button size="mini">联系我</van-button>
+        <van-button size="mini">Contact me</van-button>
       </template>
     </van-card>
   </van-skeleton>

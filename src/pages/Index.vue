@@ -1,11 +1,11 @@
 <template>
-  <van-cell center title="心动模式">
+  <van-cell center title="Matching Mode">
     <template #right-icon>
       <van-switch v-model="isMatchMode" size="24" />
     </template>
   </van-cell>
   <user-card-list :user-list="userList" :loading="loading"/>
-  <van-empty v-if="!userList || userList.length < 1" description="数据为空"/>
+  <van-empty v-if="!userList || userList.length < 1" description="Data is null"/>
 </template>
 
 <script setup lang="ts">
@@ -40,7 +40,7 @@ const loadData = async () => {
         })
         .catch(function (error) {
           console.error('/user/match error', error);
-          Toast.fail('请求失败');
+          Toast.fail('Request Failure');
         })
   } else {
     // 普通模式，直接分页查询用户
@@ -56,7 +56,7 @@ const loadData = async () => {
         })
         .catch(function (error) {
           console.error('/user/recommend error', error);
-          Toast.fail('请求失败');
+          Toast.fail('Request Failure');
         })
   }
   if (userListData) {

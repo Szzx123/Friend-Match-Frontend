@@ -1,8 +1,8 @@
 <template>
   <div id="teamPage">
-    <van-search v-model="searchText" placeholder="搜索队伍" @search="onSearch" />
+    <van-search v-model="searchText" placeholder="Search Team" @search="onSearch" />
     <team-card-list :teamList="teamList" />
-    <van-empty v-if="teamList?.length < 1" description="数据为空"/>
+    <van-empty v-if="teamList?.length < 1" description="Data is null"/>
   </div>
 </template>
 
@@ -34,7 +34,7 @@ const listTeam = async (val = '') => {
   if (res?.code === 0) {
     teamList.value = res.data;
   } else {
-    showToast('加载队伍失败，请刷新重试');
+    showToast('Failed to load the team, please refresh and try again');
   }
 }
 
