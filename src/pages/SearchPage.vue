@@ -39,23 +39,36 @@
   import { showToast } from 'vant';
   const originTagList = [
     {
-      text: '性别',
+      text: 'Gender',
       children: [
-        {text: '男', id: '男'},
-        {text: '女', id: '女'},
+        {text: 'Male', id: 'Male'},
+        {text: 'Female', id: 'Female'},
       ],
     },
     {
-      text: '年级',
+      text: 'Background',
       children: [
-        {text: '大一', id: '大一'},
-        {text: '大二', id: '大二'},
-        {text: '大3', id: '大3'},
-        {text: '大4', id: '大4'},
-        {text: '大5', id: '大5aaaaaa'},
-        {text: '大6', id: '大6aaaaaa'},
+        {text: 'Bachelor', id: 'Bachelor'},
+        {text: 'Master', id: 'Master'},
+        {text: 'Doctor', id: 'Doctor'},
       ],
     },
+    {
+      text: 'Technique',
+      children: [
+        {text: 'Python', id: 'Python'},
+        {text: 'Java', id: 'Java'},
+        {text: 'C', id: 'C'},
+        {text: 'C++', id: 'C++'},
+        {text: 'C#', id: 'C#'},
+        {text: 'Golang', id: 'Golang'},
+        {text: 'JS', id: 'JS'},
+        {text: 'SQL', id: 'SQL'},
+        {text: 'PHP', id: 'PHP'},
+        {text: 'R', id: 'R'},
+      ],
+    },
+
   ];
   let tagList = ref(originTagList);
 
