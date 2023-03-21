@@ -1,18 +1,21 @@
-# Vue 3 + TypeScript + Vite
+# A mobile platform that provides learning resources and partner matching for computer science students
 
-This template should help get you started developing with Vue 3 and TypeScript in Vite. The template uses Vue 3 `<script setup>` SFCs, check out the [script setup docs](https://v3.vuejs.org/api/sfc-script-setup.html#sfc-script-setup) to learn more.
+## Tech Stack
 
-## Recommended IDE Setup
+- 🌲Vue3 - Progressive frameworks for building web
+- 📱Vant UI - Mobile Web Component Library
+- 🪜Vite - Front-end scaffolding
+- 🔗Axios - Promise-based HTTP Client for the browser
+- ⚒️Typescript - Type-safety for your code
+- 🧾Html - Build your web page
+- 📈CSS - Beautify your web style
 
-- [VS Code](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur) + [TypeScript Vue Plugin (Volar)](https://marketplace.visualstudio.com/items?itemName=Vue.vscode-typescript-vue-plugin).
+## Introduction
 
-## Type Support For `.vue` Imports in TS
+This is a mobile site based on Vue3 + SpringBoot2, which is a learning platform. It is a learning platform for computer science students. When registering, users can choose their own tags, such as the programming language they are good at and the technology they like, and our platform provides corresponding functions such as user management, searching users by tags, recommending similar users, and forming teams. We also collect programming learning resources and display them on the platform to provide free learning resources for students who want to learn skills in a particular area. 
 
-TypeScript cannot handle type information for `.vue` imports by default, so we replace the `tsc` CLI with `vue-tsc` for type checking. In editors, we need [TypeScript Vue Plugin (Volar)](https://marketplace.visualstudio.com/items?itemName=Vue.vscode-typescript-vue-plugin) to make the TypeScript language service aware of `.vue` types.
+Our vision is that through this platform, users can find their partners with the same skills and preferences, and exchange contact information and form teams to learn and communicate together. Users can also find the learning resources they need to study.
 
-If the standalone TypeScript plugin doesn't feel fast enough to you, Volar has also implemented a [Take Over Mode](https://github.com/johnsoncodehk/volar/discussions/471#discussioncomment-1361669) that is more performant. You can enable it by the following steps:
+Back-end repository (refer to more information): https://github.com/Szzx123/Friend-Match-Backend
 
-1. Disable the built-in TypeScript Extension
-   1. Run `Extensions: Show Built-in Extensions` from VSCode's command palette
-   2. Find `TypeScript and JavaScript Language Features`, right click and select `Disable (Workspace)`
-2. Reload the VSCode window by running `Developer: Reload Window` from the command palette.
+Front-end repository: https://github.com/Szzx123/Friend-Match-Frontend
