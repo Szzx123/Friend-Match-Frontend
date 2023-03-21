@@ -4,7 +4,7 @@
   >
     <van-card
         v-for="team in props.teamList"
-        :thumb="ikun"
+        :thumb="teamav"
         :desc="team.description"
         :title="`${team.name}`"
     >
@@ -54,6 +54,7 @@
 import {TeamType} from "../models/team";
 import {teamStatusEnum} from "../constants/team";
 import ikun from '../assets/ikun.png';
+import teamav from '../assets/team.png'
 import myAxios from "../plugins/myAxios";
 import {Dialog, showFailToast, showToast, Toast} from "vant";
 import {onMounted, ref} from "vue";
